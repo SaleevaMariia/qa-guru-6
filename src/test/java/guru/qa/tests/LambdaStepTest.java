@@ -1,5 +1,6 @@
 package guru.qa.tests;
 
+import io.qameta.allure.*;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.exist;
@@ -15,6 +16,14 @@ public class LambdaStepTest {
     private static final String ISSUE_NUMBER = "68";
 
     @Test
+    @Feature("Issues")
+    @Story("Поиск по Issue")
+    @Owner("dpchelintsevv")
+    @Severity(SeverityLevel.BLOCKER)
+    @Description(
+            "Тест проверяет наличие задачи "+ ISSUE_NUMBER +
+                    " в репозитории " + REPOSITORY_NAME
+    )
     void testRepositoryIssue() {
         step("Open main page", () -> {
             open("https://github.com");
